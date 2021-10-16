@@ -22,7 +22,7 @@ const Header: React.FC = () => {
             <li className="cursor-pointer hover:text-green-500 transition-colors">
               Contact
             </li>
-            <button className="ml-4 bg-green-500 text-white transition-colors rounded-md px-8 py-1 text-sm hover:bg-white hover:text-green-500 border border-white hover:border-gray-200">
+            <button className="ml-4 bg-green-500 text-white transition-colors rounded-md px-8 py-2 text-sm hover:bg-white hover:text-green-500 border border-white hover:border-gray-200">
               Login
             </button>
           </ul>

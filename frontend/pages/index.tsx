@@ -2,8 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/header'
-
-import products from '../products.json'
+import Products from '../components/products'
 
 const Home: NextPage = () => {
   return (
@@ -17,19 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-
-      {/* product section */}
-      <main className="bg-gray-100 py-16">
-        <div className="container">
-          {products.map(product => (
-            <div key={product.id}>
-              <img src="" />
-              {product.name}
-              {product.price}
-            </div>
-          ))}
-        </div>
-      </main>
+      <Products />
     </div>
   )
 }
