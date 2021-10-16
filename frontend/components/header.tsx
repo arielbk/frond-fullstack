@@ -3,12 +3,12 @@ import { HiMenu } from 'react-icons/hi'
 
 const Header: React.FC = () => {
   return (
-    <header>
+    <header className="bg-white">
       <div className="container flex items-center py-4 sm:py-12 justify-between">
         <h1 className="flex items-center text-2xl">
           <ImLeaf className="mr-3 text-md text-green-500" />
           <a href="/" className="hover:text-green-700 transition-colors">
-            Enliven
+            Frond
           </a>
         </h1>
         <nav>
