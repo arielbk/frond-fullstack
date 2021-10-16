@@ -26,7 +26,12 @@ const Products: React.FC = () => {
                       </h3>
                       <div className="text-gray-500">€{product.price}</div>
                     </div>
-                    <p className="text-gray-500 text-sm">{product.content}</p>
+                    <p className="text-gray-500 text-sm mb-8">
+                      {product.content}
+                    </p>{' '}
+                    <button className="text-green-500 bg-white transition-colors rounded-md px-8 py-2 text-sm hover:bg-green-100 hover:text-green-500 border border-green-500 w-full">
+                      More info
+                    </button>
                   </div>
                 </div>
               </div>
