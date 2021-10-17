@@ -5,6 +5,10 @@ type Image = {
   url: string
 }
 
+export const STRIPE_PUBLISHABLE_KEY =
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ||
+  'pk_test_iXjkzxtHH5YIrHq44nOuTXgN004TC6JdFz'
+
 export const fromImageToUrl = (image: Image) => {
   if (!image) return '/vercel.svg'
 

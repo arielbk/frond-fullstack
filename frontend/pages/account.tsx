@@ -74,7 +74,11 @@ export default function Account() {
                   </div>
                 </div>
                 <div className="flex justify-between mt-6">
-                  <div className="text-gray-200 bg-gray-600 px-4 rounded-full text-xs flex items-center">
+                  <div
+                    className={`text-white bg-gray-600 px-4 rounded-full text-xs flex items-center ${
+                      order.status === 'UNPAID' ? 'bg-red-500' : 'bg-green-500'
+                    }`}
+                  >
                     {order.status}
                   </div>
                   <div>

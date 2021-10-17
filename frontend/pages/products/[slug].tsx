@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import React from 'react'
-import Header from '../../components/header'
+import BuyButton from '../../components/buyButton'
 import { API_URL, fromImageToUrl } from '../../utils/urls'
 
 const ProductPage = ({ product }: { product: any }) => (
@@ -21,9 +20,7 @@ const ProductPage = ({ product }: { product: any }) => (
             <div className="text-gray-500 text-xl">€{product.price}</div>
           </div>
           <p className="text-gray-500 text-sm">{product.content}</p>
-          <button className="text-green-500 bg-white transition-colors rounded-md px-8 py-2 my-16 text-sm hover:bg-green-100 hover:text-green-500 border border-green-500">
-            Add to cart
-          </button>
+          <BuyButton product={product} />
         </div>
       </div>
       <div className="flex-1">
