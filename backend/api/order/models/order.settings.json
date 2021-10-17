@@ -26,8 +26,8 @@
       "type": "string"
     },
     "product": {
-      "model": "product",
-      "via": "orders"
+      "via": "orders",
+      "model": "product"
     },
     "user": {
       "plugin": "users-permissions",

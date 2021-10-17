@@ -28,7 +28,8 @@ const BuyButton: React.FC<{ product: { id: string } }> = ({ product }) => {
   return (
     <button
       onClick={session ? () => handleRent() : () => signIn()}
-      className="text-green-500 bg-white transition-colors rounded-md px-8 py-2 my-16 text-sm hover:bg-green-100 hover:text-green-500 border border-green-500"
+      // className="text-green-500 bg-white transition-colors rounded-md px-8 py-2 my-16 text-sm hover:bg-green-100 hover:text-green-500 border border-green-500"
+      className="btn mt-12 bg-green-500 text-white transition-colors rounded-md px-8 py-2 text-sm hover:bg-white hover:text-green-500 border border-white hover:border-gray-200"
     >
       {session ? 'Rent now' : 'Login to rent'}
     </button>

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "products",
   "info": {
-    "name": "product"
+    "name": "product",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -26,17 +27,12 @@
       "required": false,
       "pluginOptions": {}
     },
-    "content": {
+    "description": {
       "type": "richtext"
     },
-    "meta_description": {
-      "type": "text"
-    },
-    "meta_title": {
-      "type": "text"
-    },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "slug": {
       "type": "uid",
@@ -45,6 +41,33 @@
     "orders": {
       "via": "product",
       "collection": "order"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "fern",
+        "cactus",
+        "hanging",
+        "climber"
+      ]
+    },
+    "colour": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "red",
+        "white"
+      ]
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "xs",
+        "s",
+        "m",
+        "l",
+        "xl"
+      ]
     }
   }
 }

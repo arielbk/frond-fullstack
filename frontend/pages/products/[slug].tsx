@@ -19,7 +19,13 @@ const ProductPage = ({ product }: { product: any }) => (
             <h3 className="mb-4 text-lg font-light">{product.name}</h3>
             <div className="text-gray-500 text-xl">€{product.price}</div>
           </div>
-          <p className="text-gray-500 text-sm">{product.content}</p>
+          {product.description
+            .split('\n\n')
+            .map((paragraph: string, i: number) => (
+              <p key={i} className="text-gray-500 text-sm mb-4">
+                {paragraph}
+              </p>
+            ))}
           <BuyButton product={product} />
         </div>
       </div>
@@ -45,7 +51,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const { slug } = params
-  console.log(slug)
   const productRes = await fetch(`${API_URL}/products/?slug=${slug}`)
   const product = await productRes?.json()
 

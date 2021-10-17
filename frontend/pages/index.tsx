@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Header from '../components/header'
-import Products from '../components/products'
+import Filter from '../components/filter'
 import { API_URL } from '../utils/urls'
 
 const Home: NextPage<{ products: any[] }> = ({ products }) => {
@@ -15,7 +14,7 @@ const Home: NextPage<{ products: any[] }> = ({ products }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Products products={products} />
+      <Filter products={products} />
     </div>
   )
 }

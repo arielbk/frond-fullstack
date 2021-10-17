@@ -34,19 +34,25 @@ export default function Account() {
       <h2 className="my-6 text-center text-3xl font-extrabold text-gray-900">
         Your account
       </h2>
-      <div className="container flex bg-white shadow overflow-hidden sm:rounded-lg w-8/12 p-8 gap-16">
-        <div>
+      <div className="container flex flex-col md:flex-row bg-white shadow overflow-hidden sm:rounded-lg w-8/12 p-8 gap-16">
+        <div className="text-center">
           {' '}
           {session?.user?.image && (
             <img
               src={session?.user?.image}
               alt=""
-              className="h-36 rounded-full border-white border-2 shadow-lg"
+              className="mx-auto h-36 rounded-full border-white border-2 shadow-lg"
             />
           )}
           <div className="text-xl font-light mt-6 text-center">
             {session?.user?.name}
           </div>
+          <button
+            onClick={() => signOut()}
+            className="mt-8 transition-colors rounded-md px-8 py-2 text-sm bg-white text-green-500 border border-gray-200"
+          >
+            Logout
+          </button>
         </div>
         <div className="flex-1">
           <div>
@@ -91,12 +97,6 @@ export default function Account() {
               </div>
             ))}
           </div>
-          <button
-            onClick={() => signOut()}
-            className="mt-8 transition-colors rounded-md px-8 py-2 text-sm bg-white text-green-500 border border-gray-200 width-full"
-          >
-            Logout
-          </button>
         </div>
       </div>
     </div>
