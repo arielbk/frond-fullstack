@@ -69,7 +69,7 @@ module.exports = {
     const BASE_URL = ctx.request.header.origin || "http://localhost:300";
 
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
+      payment_method_types: ["card", "sofort"],
       customer_email: user.email,
       mode: "payment",
       success_url: `${BASE_URL}/order/success?session_id={CHECKOUT_SESSION_ID}`,

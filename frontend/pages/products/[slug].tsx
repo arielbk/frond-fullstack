@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import Image from 'next/image'
 import BuyButton from '../../components/buyButton'
 import { API_URL, fromImageToUrl } from '../../utils/urls'
 
@@ -12,25 +13,42 @@ const ProductPage = ({ product }: { product: any }) => (
       )}
     </Head>
 
-    <div className="container flex flex-col-reverse height-80 sm:height-full sm:flex-row gap-8">
-      <div className="flex-1 w-8/12">
-        <div className="py-8">
-          <div className="flex justify-between">
-            <h3 className="mb-4 text-lg font-light">{product.name}</h3>
-            <div className="text-gray-500 text-xl">€{product.price}</div>
+    <div className="bg-gray-100 py-16">
+      <div className="container">
+        <div className=" bg-white rounded-lg overflow-hidden flex flex-col-reverse height-80 sm:height-full sm:flex-row">
+          {/* content */}
+          <div className="flex-1 w-full sm:w-8/12">
+            {/* header */}
+            <div className="flex items-center justify-between border-b bg-gray-50 py-8 px-16">
+              <h3 className="text-4xl font-extrabold text-gray-900">
+                {product.name}
+              </h3>
+              <div className="text-gray-500 text-2xl">
+                €{product.price.toFixed(2)}
+              </div>
+            </div>
+            <div className="p-16">
+              <div className=" mb-24">
+                {product.description
+                  .split('\n\n')
+                  .map((paragraph: string, i: number) => (
+                    <p key={i} className="text-gray-500 text-sm mb-4">
+                      {paragraph}
+                    </p>
+                  ))}
+              </div>
+              <BuyButton product={product} />
+            </div>
           </div>
-          {product.description
-            .split('\n\n')
-            .map((paragraph: string, i: number) => (
-              <p key={i} className="text-gray-500 text-sm mb-4">
-                {paragraph}
-              </p>
-            ))}
-          <BuyButton product={product} />
+          {/* image */}
+          <div style={{ height: 500 }}>
+            <img
+              src={fromImageToUrl(product.image)}
+              alt={product.name}
+              className="h-full"
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex-1">
-        <img src={fromImageToUrl(product.image)} alt={product.name} />
       </div>
     </div>
   </div>
